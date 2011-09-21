@@ -388,6 +388,9 @@ function! s:Project(filename) " <<<
                 call s:SetupScriptAutoCommand('BufLeave', scriptout)
             endif
         endif
+		" Make sure that read autocmds get run
+		doautocmd BufRead
+
         return 1
     endfunction
     ">>>
